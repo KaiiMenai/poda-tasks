@@ -8,6 +8,7 @@ Click on the GREEN Code button.
 Click on the Codespaces tab.
 Click Create New Codespace on main.
 Laugh at the random generated Codespace name.
+
 ## Technologies
 1. Python
 2. Git
@@ -29,3 +30,18 @@ IF Codespaces throws 403 ERROR when attempting COMMIT:
 - Check login details.
 - Check Access and Permissions.
 - Honestly just easier to make a new repository and copy everything over.
+
+## Summary of Content in Jupyter Notebook
+### Task 1: Source the Data Set
+Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.
+### Task 2: Explore the Data Structure
+Dataset Loaded in. 150 samples, accross 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
+First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.tail(5)])
+### Task 3
+### Task 4
+### Task 5
+### Task 6
+### Task 7
+### Task 7
+### Task 9
+### Task 10
