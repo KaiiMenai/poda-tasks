@@ -31,6 +31,8 @@ IF Codespaces throws 403 ERROR when attempting COMMIT:
 - Check Access and Permissions.
 - Honestly just easier to make a new repository and copy everything over.
 
+*** SPLIT - put the appropriate model/whatsit for the analysis type under each task header to make it easier for reader.
+
 ## Summary of Content in Jupyter Notebook
 ### Task 1: Source the Data Set
 Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.
