@@ -34,6 +34,7 @@ IF Codespaces throws 403 ERROR when attempting COMMIT:
 *** SPLIT - put the appropriate model/whatsit for the analysis type under each task header to make it easier for reader.
 
 ## Summary of Content in Jupyter Notebook
+
 ### Libraries for the tasks
 
 (Python. 2025. Built-in types. https://docs.python.org/3/library/stdtypes.html)
