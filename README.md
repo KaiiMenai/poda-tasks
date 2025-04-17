@@ -72,6 +72,10 @@ To conduct the Logistic Regression and get R<sup>2<suo> value, the packages used
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
 
+For the Pairwise plot, the pairplot from the package seaborn was used:
+import seaborn as sns
+pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) - where dataframe is the data to be plotted, class is the categorical variable, and height is the desired height of the subplot.
+
 ### Task 10
 
 ## References
