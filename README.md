@@ -61,7 +61,7 @@ Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c
 ### Task 2: Explore the Data Structure
 
 Dataset Loaded in.
-150 samples, accross 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
+150 samples, across 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
 First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.tail(5)])
 
 ### Task 3
