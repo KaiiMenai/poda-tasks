@@ -97,7 +97,7 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where sns.heatmap(corr_m
 
 ### Task 9
 
-To conduct the Logistic Regression and get R<sup>2<sup> value, the packages used were:
+The packages used to conduct the Logistic Regression and get R<sup>2<sup> were:
 
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
