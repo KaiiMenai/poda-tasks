@@ -55,10 +55,15 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 ### Task 1: Source the Data Set
-Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.
+
+Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.#
+
 ### Task 2: Explore the Data Structure
-Dataset Loaded in. 150 samples, accross 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
+
+Dataset Loaded in.
+150 samples, accross 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
 First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.tail(5)])
+
 ### Task 3
 ### Task 4
 ### Task 5
