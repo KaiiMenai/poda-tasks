@@ -83,17 +83,23 @@ First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.
 
 ### Task 8
 
-corr_matrix = df.iloc[:, :4].corr()
-    -  where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
-    - in this : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
+corr_matrix = df.iloc[:, :4].corr() :
 
-.corr(): - this calculates the correlation matrix for the selected columns. The correlation matrix shows the pairwise correlation coefficients between the features, with values ranging from:
+- where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
+- in this code, : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
+- .corr(): calculates the correlation matrix for the selected columns.
+
+The correlation matrix shows the pairwise correlation coefficients between the features, with values ranging from:
 
 -  1: Perfect positive correlation.
 -  0: No correlation.
 - -1: Perfect negative correlation.
 
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where sns.heatmap(corr_matrix, ...): is what creates a heatmap visualisation of the correlation matrix using Seaborn, annot=True: shows the correlation values (numerical) inside each cell of the heatmap, and cmap='coolwarm': Specifies the colour map for the heatmap - Cool colours (blues) represent negative correlations, and warm colours (reds) represent positive correlations.
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') :
+
+- where sns.heatmap(corr_matrix, ...): is what creates a heatmap visualisation of the correlation matrix using Seaborn.
+- annot=True: shows the correlation values (numerical) inside each cell of the heatmap.
+- cmap='coolwarm': specifies the colour map for the heatmap. In the plot, cool colours (blues) represent negative correlations, and warm colours (reds) represent positive correlations.
 
 ### Task 9
 
