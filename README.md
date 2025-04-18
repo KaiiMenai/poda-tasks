@@ -65,11 +65,17 @@ Dataset Loaded in.
 First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.tail(5)])
 
 ### Task 3
+
 ### Task 4
+
 ### Task 5
+
 ### Task 6
+
 ### Task 7
-### Task 7
+
+### Task 8
+
 ### Task 9
 
 To conduct the Logistic Regression and get R<sup>2<suo> value, the packages used were:
