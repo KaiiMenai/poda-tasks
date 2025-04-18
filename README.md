@@ -83,6 +83,12 @@ First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.
 
 ### Task 8
 
+corr_matrix = df.iloc[:, :4].corr()
+    -  where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
+    - in this : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
+
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where corr_matrix is the analysis test plotted, class is the categorical variable, and height is the desired height of the subplot.
+
 ### Task 9
 
 To conduct the Logistic Regression and get R<sup>2<suo> value, the packages used were:
