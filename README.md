@@ -81,6 +81,18 @@ First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.
 
 ### Task 7
 
+features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'] # Define feature names and their corresponding titles
+titles = ['Sepal Length by Species', 'Sepal Width by Species', 
+          'Petal Length by Species', 'Petal Width by Species']
+
+plt.figure(figsize=(12, 8))
+for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'petal_width']):
+    ax = plt.subplot(2, 2, i+1)
+    sns.boxplot(x='species', y=feature, hue='species', data=df, ax=ax)
+    ax.set_title(titles[i])
+    ax.set_xlabel('Species'.title())  # Capitalize the first letter of each word
+    ax.set_ylabel(feature.replace('_', ' ').title())  # Capitalize the first letter of each word
+
 ### Task 8
 
 corr_matrix = df.iloc[:, :4].corr() :
