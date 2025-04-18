@@ -93,7 +93,16 @@ corr_matrix = df.iloc[:, :4].corr()
 -  0: No correlation.
 - -1: Perfect negative correlation.
 
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where corr_matrix is the analysis test plotted, class is the categorical variable, and height is the desired height of the subplot.
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where sns.heatmap(corr_matrix, ...): is the analysis test plotted, class is the categorical variable, and height is the desired height of the subplot.
+
+Creates a heatmap visualization of the correlation matrix using Seaborn.
+annot=True:
+
+Displays the correlation values (numerical) inside each cell of the heatmap.
+cmap='coolwarm':
+
+Specifies the color map for the heatmap.
+Cool colors (blue) represent negative correlations, and warm colors (red) represent positive correlations.
 
 ### Task 9
 
