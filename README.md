@@ -87,6 +87,12 @@ corr_matrix = df.iloc[:, :4].corr()
     -  where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
     - in this : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
 
+.corr(): - this calculates the correlation matrix for the selected columns. The correlation matrix shows the pairwise correlation coefficients between the features, with values ranging from:
+
+-  1: Perfect positive correlation.
+-  0: No correlation.
+- -1: Perfect negative correlation.
+
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') - where corr_matrix is the analysis test plotted, class is the categorical variable, and height is the desired height of the subplot.
 
 ### Task 9
