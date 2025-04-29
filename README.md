@@ -46,6 +46,7 @@ IF Codespaces throws 403 ERROR when attempting COMMIT:
 
 (Python. 2025. Built-in types. https://docs.python.org/3/library/stdtypes.html)
 
+'''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -60,6 +61,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+'''
 
 ### Task 1: Source the Data Set
 
