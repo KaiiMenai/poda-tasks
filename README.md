@@ -128,4 +128,14 @@ For the Pairwise plot, the pairplot from the package seaborn was used:
 import seaborn as sns
 pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) - where dataframe is the data to be plotted, class is the categorical variable, and height is the desired height of the subplot.
 
+## Conclusion
+
+What the data does show, vs. what it doesn't.
+
+The size of the dataset is a limiting factor when it comes to model accuracy, reliability, and consistent repeatability. The data does well at demonstrating what a linear based dataset can show through various forms of analysis. 
+
+GIVE EXAMPLES - Seapl features vs Petal features for species separation, how this shows relavance to the heat maps and how both of these things together highlight the features that may be useful in determining/categorising samples - if the species were unknown. 
+
+However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
+
 ## References
