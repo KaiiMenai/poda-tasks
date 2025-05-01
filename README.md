@@ -132,7 +132,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 ```
 
-The PCA showed that the majority of the variance within the data was due to the petal features (72.8%) in PC1 (first principal components).
+The PCA showed that the majority of the variance within the data was due to the petal features (72.8 %) in PC1 (first principal components).
 
 ### Task 7
 
@@ -200,6 +200,29 @@ from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
 ```
 
+All plots (two subplots for sepal features and petal features) were placed into one "figure" using ```fig, axes = plt.subplots(1, 2, figsize=(20, 8))```.
+
+```ruby
+# Feature1 vs Feature2
+X_feature = df[['feature1']]
+y_feature = df['feature2']
+model_feature = LinearRegression()
+model_feature.fit(X_feature, y_feature)
+y_feature_pred = model_feature.predict(X_feature)
+r2_feature = r2_score(y_feature, y_feature_pred)
+
+sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)
+sns.regplot(ax=axes[0], data=df, x='feature1', y='feature2', scatter=False, color='red')
+axes[0].set_title('Feature1 vs Feature2 by Species')
+axes[0].set_xlabel('Feature1 (cm)')
+axes[0].set_ylabel('Feature2 (cm)')
+axes[0].legend(title='Species')
+axes[0].grid(True)
+axes[0].text(0.05, 0.95, f'R² = {r2_feature:.2f}', transform=axes[0].transAxes, fontsize=12, verticalalignment='top', bbox=dict(boxstyle="round", facecolor="white", alpha=0.5))
+```
+
+
+
 ### Task 10
 
 For the Pairwise plot, the pairplot from the package seaborn was used:
@@ -217,7 +240,7 @@ pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot)
 
 The size of the dataset is a limiting factor when it comes to model accuracy, reliability, and consistent repeatability. The data does well at demonstrating what a linear based dataset can show through various forms of analysis.
 
-For example for a number of the plots (histograms, scatter plots, linear regression, box plots) the Setosa species clearly clusters separately to the Versicolor and Virginica species, for both sepal and petal features. For petal features all species separated from one another, indicating that petal features were more distinguishable between species. Following principal component analysis (PCA) this was solidified as it was found that PC1 (first principal component) was responsible for 72.8 % of the variability seen within the data, the PC1 was referring to the petal length and width features. The feature correlation matrix heat map also displayed this, where petal length vs petal width resulted in r = 0.96 indicating that the petal length and width showed strong positive correlation and that the size often varied together. This was further corroborated following the linear regression analysis where petal length vs petal width gave an R<sup>2</sup> value of 0.93, indicating that most of the variance is petal width can be explained by petal length. Some predictions were made for petal width following an 80 - 20 split in the data for training and testing, respectively. However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
+For example for a number of the plots (histograms, scatter plots, linear regression, box plots) the Setosa species clearly clusters separately to the Versicolor and Virginica species, for both sepal and petal features. For petal features all species separated from one another, indicating that petal features were more distinguishable between species. Following principal component analysis (PCA) this was solidified as it was found that PC1 (first principal component) was responsible for 72.8 % of the variability seen within the data, the PC1 was referring to the petal length and width features. The feature correlation matrix heat map also displayed this, where petal length vs petal width resulted in r = 0.96 indicating that the petal length and width showed strong positive correlation and that the size often varied together. This was further corroborated following the linear regression analysis where petal length vs petal width gave an R<sup>2</sup> value of 0.93, indicating that most of the variance is petal width can be explained by petal length. Some predictions were made for petal width following an 80 % - 20 % split in the data for training and testing, respectively. However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
 
 ## References
 
