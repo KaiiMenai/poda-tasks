@@ -2,15 +2,6 @@
 
 by Kyra Menai Hamilton (PhD)
 
-## Setup
-
-Sign up for a free GitHub Account.
-Go to the Repository page in GitHub through the browser.
-Click on the GREEN Code button.
-Click on the Codespaces tab.
-Click Create New Codespace on main.
-Laugh at the random generated Codespace name.
-
 ## Technologies
 
 1. Python
@@ -19,34 +10,13 @@ Laugh at the random generated Codespace name.
 4. Codespaces
 5. Jupyter
 
-## Notes and Tips
-
-To save changes made to the README file:
-
-- Click on Source Control option on the left.
-- In Message box, enter what the changes were i.e. changed README.
-- Click on the Commit button and this will save changes to the project, this will save the state of the project as it is now.
-
-To sync the changes with GitHub:
-
-- Following saving changes to the README file, through the Source Control and Commit functions, there should now be a Sync Changes button.
-- Click on the Sync Changes button, this will then sync the committed changes from the development environment (github.dev) with GitHub.
-
-IF Codespaces throws 403 ERROR when attempting COMMIT:
-
-- Check login details.
-- Check Access and Permissions.
-- Honestly just easier to make a new repository and copy everything over.
-
-*** SPLIT - put the appropriate model/whatsit for the analysis type under each task header to make it easier for reader.
-
 ## Summary of Content in Jupyter Notebook
 
 ### Libraries for the tasks
 
 (Python. 2025. Built-in types. https://docs.python.org/3/library/stdtypes.html)
 
-'''
+```ruby
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -61,7 +31,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-'''
+```
 
 ### Task 1: Source the Data Set
 
