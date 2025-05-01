@@ -133,8 +133,13 @@ from sklearn.linear_model import LinearRegression
 ### Task 10
 
 For the Pairwise plot, the pairplot from the package seaborn was used:
+
+```ruby
 import seaborn as sns
-pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) - where dataframe is the data to be plotted, class is the categorical variable, and height is the desired height of the subplot.
+pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) 
+```
+
+Where ```ruby dataframe``` is the data to be plotted, ```ruby class``` is the categorical variable, and ```ruby height``` is the desired height of the subplot.
 
 ## Conclusion
 
