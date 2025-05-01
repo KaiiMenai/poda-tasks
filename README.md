@@ -83,6 +83,7 @@ First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.
 
 ### Task 7
 
+```ruby
 features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'] # Define feature names and their corresponding titles
 titles = ['Sepal Length by Species', 'Sepal Width by Species', 
           'Petal Length by Species', 'Petal Width by Species']
@@ -94,10 +95,13 @@ for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'pet
     ax.set_title(titles[i])
     ax.set_xlabel('Species'.title())  # Capitalize the first letter of each word
     ax.set_ylabel(feature.replace('_', ' ').title())  # Capitalize the first letter of each word
+```
 
 ### Task 8
 
+```ruby
 corr_matrix = df.iloc[:, :4].corr() :
+```
 
 - where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
 - in this code, : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
@@ -109,18 +113,22 @@ The correlation matrix shows the pairwise correlation coefficients between the f
 -  0: No correlation.
 - -1: Perfect negative correlation.
 
+```ruby
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') :
+```
 
-- where sns.heatmap(corr_matrix, ...): is what creates a heatmap visualisation of the correlation matrix using Seaborn.
-- annot=True: shows the correlation values (numerical) inside each cell of the heatmap.
-- cmap='coolwarm': specifies the colour map for the heatmap. In the plot, cool colours (blues) represent negative correlations, and warm colours (reds) represent positive correlations.
+- where ```ruby sns.heatmap(corr_matrix, ...):``` is what creates a heatmap visualisation of the correlation matrix using Seaborn.
+- ```ruby annot=True:``` shows the correlation values (numerical) inside each cell of the heatmap.
+- ```ruby cmap='coolwarm':``` specifies the colour map for the heatmap. In the plot, cool colours (blues) represent negative correlations, and warm colours (reds) represent positive correlations.
 
 ### Task 9
 
-The packages used to conduct the Logistic Regression and get R <sup>2</sup> were:
+The packages used to conduct the Logistic Regression and get R<sup>2</sup> were:
 
-- from sklearn.metrics import r2_score
-- from sklearn.linear_model import LinearRegression
+```ruby
+from sklearn.metrics import r2_score
+from sklearn.linear_model import LinearRegression
+```
 
 ### Task 10
 
@@ -132,9 +140,9 @@ pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) 
 
 What the data does show, vs. what it doesn't.
 
-The size of the dataset is a limiting factor when it comes to model accuracy, reliability, and consistent repeatability. The data does well at demonstrating what a linear based dataset can show through various forms of analysis. 
+The size of the dataset is a limiting factor when it comes to model accuracy, reliability, and consistent repeatability. The data does well at demonstrating what a linear based dataset can show through various forms of analysis.
 
-GIVE EXAMPLES - Seapl features vs Petal features for species separation, how this shows relavance to the heat maps and how both of these things together highlight the features that may be useful in determining/categorising samples - if the species were unknown. 
+GIVE EXAMPLES - Seapl features vs Petal features for species separation, how this shows relavance to the heat maps and how both of these things together highlight the features that may be useful in determining/categorising samples - if the species were unknown.
 
 However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
 
