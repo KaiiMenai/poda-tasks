@@ -201,7 +201,7 @@ from sklearn.linear_model import LinearRegression
 ```
 
 All plots (two subplots for sepal features and petal features) were placed into one "figure" using ```fig, axes = plt.subplots(1, 2, figsize=(20, 8))```.
-
+The input code has been split for easier explanation.
 ```ruby
 # Feature1 vs Feature2
 X_feature = df[['feature1']]
@@ -210,7 +210,16 @@ model_feature = LinearRegression()
 model_feature.fit(X_feature, y_feature)
 y_feature_pred = model_feature.predict(X_feature)
 r2_feature = r2_score(y_feature, y_feature_pred)
+```
 
+- where ```X_feature``` refers to the input variable ```df[['feature1']]``` which would be sepal length or petal length,
+- ```Xyfeature``` refers to the input variable ```df['feature2']``` which would be sepal width or petal width,
+- ```model_feature = LinearRegression()``` refers to the model that is being run in this case it is ```LinearRegression()```,
+- ```model_feature.fit(X_feature, y_feature``` states the model to be fit,
+- ```y_feature_pred = model_feature.predict(X_feature)``` where ```y_feature_pred``` was sepal width or petal width to be predicted from the ```(X_feature)``` of sepal length or petal length, and
+- ```r2_feature = r2_score(y_feature, y_feature_pred)``` would give the ```r2_feature``` of the model based on the actual ```y_feature``` compared to the ```y_feature_pred``` values.
+
+```ruby
 sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)
 sns.regplot(ax=axes[0], data=df, x='feature1', y='feature2', scatter=False, color='red')
 axes[0].set_title('Feature1 vs Feature2 by Species')
@@ -221,7 +230,13 @@ axes[0].grid(True)
 axes[0].text(0.05, 0.95, f'R² = {r2_feature:.2f}', transform=axes[0].transAxes, fontsize=12, verticalalignment='top', bbox=dict(boxstyle="round", facecolor="white", alpha=0.5))
 ```
 
-
+- where ```sns.scatterplot``` refers to the plot to be run,
+- where ```sns.regplot``` refers to the regression line,
+- ```ax=axes[0]``` refers to the subplot,
+- ```data=df``` was the iris dataframe,
+- ```x="feature1"``` where ```"feature1"``` was sepal length or petal length,
+- ```y="feature2"``` where ```"feature2"``` was sepal width or petal width, and
+- ```hue="species"``` would colour code the plot points by species.
 
 ### Task 10
 
