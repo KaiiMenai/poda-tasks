@@ -1,6 +1,6 @@
 # Principles of Data Analytics Tasks
 
-by Kyra Menai Hamilton (PhD)
+author: Kyra Menai Hamilton (PhD)
 
 ## Technologies
 
@@ -115,10 +115,24 @@ plt.tight_layout()
 plt.show()
 ```
 All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
-The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)``` where ```data=df``` was the iris dataframe, ```x="feature"``` where ```"feature"``` was sepal length/width or petal length/width, ```hue="species"``` would colour code the plot points by species, and ```ax=axes[0, 0]``` referred to the subplot.
+The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)``` 
 
+- ```sns.histplot``` refers to the plot to be made,
+- where ```data=df``` was the iris dataframe, 
+- ```x="feature"``` where ```"feature"``` was sepal length/width or petal length/width, 
+- ```hue="species"``` would colour code the plot points by species, and 
+- ```ax=axes[0, 0]``` referred to the subplot.
 
 ### Task 5
+
+Scatter plots were made for sepal length vs sepal width and petal length vs petal width, these were all plotted on one "figure" for easi. This was done using seaborn: ```sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)```
+
+- where ```sns.scatterplot``` refers to the plot to be run,
+- ```ax=axes[0]``` refers to the subplot,
+- ```data=df``` was the iris dataframe,
+- ```x="feature1"``` where ```"feature1"``` was sepal length or petal length,
+- ```y="feature2"``` where ```"feature2"``` was sepal width or petal width, and
+- ```hue="species"``` would colour code the plot points by species.
 
 ### Task 6
 
@@ -144,9 +158,9 @@ for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'pet
 corr_matrix = df.iloc[:, :4].corr() :
 ```
 
-- where df.iloc[:, :4]: selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
-- in this code, : selects all rows, and :4 selects columns from index 0 to 3 (exclusive).
-- .corr(): calculates the correlation matrix for the selected columns.
+- where ```df.iloc[:, :4]:``` selects the first four columns of the df (dataframe), these were assumed to be numerical features (sepal length, sepal width, petal length, and petal width).
+- in this code, ```:``` selects all rows, and ```:4``` selects columns from index 0 to 3 (exclusive).
+- ```.corr():``` calculates the correlation matrix for the selected columns.
 
 The correlation matrix shows the pairwise correlation coefficients between the features, with values ranging from:
 
