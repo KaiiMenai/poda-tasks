@@ -35,17 +35,88 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 ### Task 1: Source the Data Set
 
-Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.#
+Importing the Iris dataset from https://gist.github.com/curran/a08a1080b88344b0c8a7 using https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html to make Python be able to read the csv easier.
 
 ### Task 2: Explore the Data Structure
 
 Dataset Loaded in.
 150 samples, across 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
-First and last 5 rows were printed using: sliced_df = pd.concat([df.head(5), df.tail(5)])
+First and last 5 rows were printed using: ```sliced_df = pd.concat([df.head(5), df.tail(5)])```
 
 ### Task 3
 
+Summary statistics for the whole dataset and for each species was done using the ```df.describe()``` function. 
+This was modified for each species so that the species could be separated from one another:
+
+```ruby
+setosa_stats = df[df['species'] == 'setosa'].describe()
+versicolor_stats = df[df['species'] == 'versicolor'].describe()
+virginica_stats = df[df['species'] == 'virginica'].describe()
+```
+
+Class distributions were also explored using ```df['species'].value_counts()``` to see if the data was evenly distributed between the three species. 50 samples were seen for each of the species, Setosa, Virginica, and Versicolor.
+
+In order to get a full view of the differences between the species for each of the features a one way ANOVA was run for each of the features using:
+```ruby
+# Group data by species
+setosa = df[df['species'] == 'setosa']['sepal_length']
+versicolor = df[df['species'] == 'versicolor']['sepal_length']
+virginica = df[df['species'] == 'virginica']['sepal_length']
+
+# Perform one-way ANOVA
+anova_results = f_oneway(setosa, versicolor, virginica)
+
+# Display results
+print("One-Way ANOVA Results:")
+print(f"F-statistic: {anova_results.statistic:.4f}")
+print(f"P-value: {anova_results.pvalue:.4f}")
+```
+
+Running the ANOVA in addition to the summary statistics would give an oversight as to if there were differences between the species for each of the features.
+
 ### Task 4
+
+Histograms were plotted for each of the features. 
+
+```ruby
+# Set up the figure
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Plot histogram for Sepal Length
+sns.histplot(data=df, x="sepal_length", hue="species", kde=False, ax=axes[0, 0], bins=15)
+axes[0, 0].set_title("Sepal Length Distribution by Species")
+axes[0, 0].set_xlabel("Sepal Length (cm)")
+axes[0, 0].set_ylabel("Frequency")
+axes[0, 0].legend(title="Species", labels=df['species'].unique(), loc='upper right')
+
+# Plot histogram for Sepal Width
+sns.histplot(data=df, x="sepal_width", hue="species", kde=False, ax=axes[0, 1], bins=15)
+axes[0, 1].set_title("Sepal Width Distribution by Species")
+axes[0, 1].set_xlabel("Sepal Width (cm)")
+axes[0, 1].set_ylabel("Frequency")
+axes[0, 1].legend(title="Species", labels=df['species'].unique(), loc='upper right')
+
+# Plot histogram for Petal Length
+sns.histplot(data=df, x="petal_length", hue="species", kde=False, ax=axes[1, 0], bins=15)
+axes[1, 0].set_title("Petal Length Distribution by Species")
+axes[1, 0].set_xlabel("Petal Length (cm)")
+axes[1, 0].set_ylabel("Frequency")
+axes[1, 0].legend(title="Species", labels=df['species'].unique(), loc='upper right')
+
+# Plot histogram for Petal Width
+sns.histplot(data=df, x="petal_width", hue="species", kde=False, ax=axes[1, 1], bins=15)
+axes[1, 1].set_title("Petal Width Distribution by Species")
+axes[1, 1].set_xlabel("Petal Width (cm)")
+axes[1, 1].set_ylabel("Frequency") 
+axes[1, 1].legend(title="Species", labels=df['species'].unique(), loc='upper right')
+
+# Adjust layout for better spacing
+plt.tight_layout()
+plt.show()
+```
+All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
+The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)``` where ```data=df``` was the iris dataframe, ```x="feature"``` where ```"feature"``` was sepal length/width or petal length/width, ```hue="species"``` would colour code the plot points by species, and ```ax=axes[0, 0]``` referred to the subplot.
+
 
 ### Task 5
 
