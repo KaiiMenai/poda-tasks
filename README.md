@@ -87,7 +87,7 @@ The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="spe
 
 ### Task 5
 
-Scatter plots were made for sepal length vs sepal width and petal length vs petal width, these were all plotted on one "figure" for easi. This was done using seaborn: ```sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)```
+Scatter plots were made for sepal length vs sepal width and petal length vs petal width, these were all plotted on one "figure" for ease of observation. This was done using seaborn: ```sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)```
 
 - where ```sns.scatterplot``` refers to the plot to be run,
 - ```ax=axes[0]``` refers to the subplot,
@@ -134,9 +134,14 @@ The correlation matrix shows the pairwise correlation coefficients between the f
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm') :
 ```
 
-- where ```ruby sns.heatmap(corr_matrix, ...):``` is what creates a heatmap visualisation of the correlation matrix using Seaborn.
-- ```ruby annot=True:``` shows the correlation values (numerical) inside each cell of the heatmap.
-- ```ruby cmap='coolwarm':``` specifies the colour map for the heatmap. In the plot, cool colours (blues) represent negative correlations, and warm colours (reds) represent positive correlations.
+- where ```sns.heatmap(corr_matrix, ...):``` is what creates a heatmap visualisation of the correlation matrix using Seaborn.
+- ```annot=True:``` shows the correlation values (numerical) inside each cell of the heatmap.
+- ```cmap='coolwarm':``` specifies the colour map for the heatmap.
+
+In the plot,
+
+- cool colours (**blues**) represent **negative** correlations, and
+- warm colours (**reds**) represent **positive** correlations.
 
 ### Task 9
 
@@ -156,17 +161,15 @@ import seaborn as sns
 pairplot = sns.pairplot(dataframe, hue='class', height=desired height for plot) 
 ```
 
-Where ```ruby dataframe``` is the data to be plotted, ```ruby class``` is the categorical variable, and ```ruby height``` is the desired height of the subplot.
+- Where ```dataframe``` is the data to be plotted,
+- ```class``` is the categorical variable, and
+- ```height``` is the desired height of the subplot.
 
 ## Conclusion
 
-What the data does show, vs. what it doesn't.
-
 The size of the dataset is a limiting factor when it comes to model accuracy, reliability, and consistent repeatability. The data does well at demonstrating what a linear based dataset can show through various forms of analysis.
 
-GIVE EXAMPLES - Seapl features vs Petal features for species separation, how this shows relavance to the heat maps and how both of these things together highlight the features that may be useful in determining/categorising samples - if the species were unknown.
-
-However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
+For example for a number of the plots (histograms, scatter plots, linear regression, box plots) the Setosa species clearly clusters separately to the Versicolor and Virginica species, for both sepal and petal features. For petal features all species separated from one another, indicating that petal features were more distinguishable between species. Following principal component analysis (PCA) this was solidified as it was found that PC1 (first principal component) was responsible for 72.8 % of the variability seen within the data, the PC1 was referring to the petal length and width features. The feature correlation matrix heat map also displayed this, where petal length vs petal width resulted in r = 0.96 indicating that the petal length and width showed strong positive correlation and that the size often varied together. This was further corroborated following the linear regression analysis where petal length vs petal width gave an R<sup>2</sup> value of 0.93, indicating that most of the variance is petal width can be explained by petal length. Some predictions were made for petal width following an 80 - 20 split in the data for training and testing, respectively. However, in order to have a mode reliable method for predicting the species using a linear regression (or logistic regression) model, a larger sample population is essential in order to accurately visualise and calculate the nuances between such species based on their features.
 
 ## References
 
