@@ -58,18 +58,9 @@ Class distributions were also explored using ```df['species'].value_counts()``` 
 
 In order to get a full view of the differences between the species for each of the features a one way ANOVA was run for each of the features, separated by species using ```f_oneway```:
 ```ruby
-# Group data by species
 setosa = df[df['species'] == 'setosa']['sepal_length']
 versicolor = df[df['species'] == 'versicolor']['sepal_length']
 virginica = df[df['species'] == 'virginica']['sepal_length']
-
-# Perform one-way ANOVA
-anova_results = f_oneway(setosa, versicolor, virginica)
-
-# Display results
-print("One-Way ANOVA Results:")
-print(f"F-statistic: {anova_results.statistic:.4f}")
-print(f"P-value: {anova_results.pvalue:.4f}")
 ```
 
 Running the ANOVA in addition to the summary statistics gave an oversight as to if there were differences between the species for each of the features.
@@ -77,12 +68,12 @@ Running the ANOVA in addition to the summary statistics gave an oversight as to 
 ### Task 4
 
 Histograms were plotted for each of the features. All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
-The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)``` 
+The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)```
 
 - ```sns.histplot``` refers to the plot to be made,
 - where ```data=df``` was the iris dataframe, 
-- ```x="feature"``` where ```"feature"``` was sepal length/width or petal length/width, 
-- ```hue="species"``` would colour code the plot points by species, and 
+- ```x="feature"``` where ```"feature"``` was sepal length/width or petal length/width,
+- ```hue="species"``` would colour code the plot points by species, and
 - ```ax=axes[0, 0]``` referred to the subplot.
 
 ### Task 5
@@ -98,7 +89,50 @@ Scatter plots were made for sepal length vs sepal width and petal length vs peta
 
 ### Task 6
 
+There were two ways to plot regression lines to the scatter plots from task 5 using ```seaborn``` or ```numpy```. For the purposes of completing the task initially a regression line was added to the plots from task 5 using the ```np.polyfit``` module from ```numpy.polyfit```.
+
+```ruby
+import numpy as np
+```
+
+Through using numpy, the regression line is manually calculated and added to the plots. This gives the user greater control and customisability of the regression lines.
+```ruby
+# Scatter plot with regression line for sepal length vs width
+sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)
+# Custom function for regression line
+for species in df['species'].unique():
+    subset = df[df['species'] == species]
+    # Fit a linear regression line using numpy.polyfit
+    slope, intercept = np.polyfit(subset['feature1'], subset['feature2'], 1)
+    # Generate regression line points
+    x_vals = np.linspace(subset['feature1'].min(), subset['feature1'].max(), 100)
+    y_vals = slope * x_vals + intercept
+    # Plot the regression line
+    axes[0].plot(x_vals, y_vals, label=f'{species} Regression')
+```
+
+- where ```sns.scatterplot``` refers to the plot to be run,
+- ```ax=axes[0]``` refers to the subplot,
+- ```data=df``` was the iris dataframe,
+- ```x="feature1"``` where ```"feature1"``` was sepal length or petal length,
+- ```y="feature2"``` where ```"feature2"``` was sepal width or petal width, and
+- ```hue="species"``` would colour code the plot points by species.
+
+The custom function  for plotting the regression line subsets the data by 'species' to give individual species regression lines.
+
+Following the use of ```numpy``` a plot and regression lines by species was also plotted using ```sns.regplot``` from ```seaborn```. This automatically fits and plots the regression line, it is easier to use compared to numpy, but has less customisability.
+
+Principal Component Analysis (PCS) was conducted on the data. This was used to see where most of the variability in the data came from. The data needed to be standardised for the analysis and this was done through a scaled transformation of the data:
+```ruby
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+The PCA showed that the majority of the variance within the data was due to the petal features (72.8%) in PC1 (first principal components).
+
 ### Task 7
+
+Boxplots were used to see the spread of the data and whether there were outliers. These were done for each of the features and colour coded for the species.
 
 ```ruby
 features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'] # Define feature names and their corresponding titles
@@ -113,6 +147,16 @@ for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'pet
     ax.set_xlabel('Species'.title())  # Capitalize the first letter of each word
     ax.set_ylabel(feature.replace('_', ' ').title())  # Capitalize the first letter of each word
 ```
+
+In the code:
+
+- ```for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'petal_width']):``` separates by feature and labels the figure appropriately in ```ax.set_title(titles[i])```,
+- ```sns.boxplot``` states the plot to be conducted,
+- ```x='species'``` the data will be separated by species,
+- ```y=feature``` plotted against the species
+- ```hue='species'``` the data will be colour coded by species,
+- ```data=df``` is the iris dataset, and
+- ```ax=ax``` refers to the subplot.
 
 ### Task 8
 
