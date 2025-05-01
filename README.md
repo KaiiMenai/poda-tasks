@@ -279,6 +279,8 @@ Hamilton, K.M. (2022) *Drug resistance and susceptibility in sheep nematodes: fi
 
 James, G., Witten, D., Hastie, T. and Tibshirani, R. (2013) *An Introduction to Statistical Learning*. New York: Springer. Available at: https://link.springer.com/book/10.1007/978-1-0716-1418-1
 
+Jolliffe, I.T. and Cadima, J. (2016) *Principal component analysis: a review and recent developments*, Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 374(2065), pp. 20150202. Available at: https://pubmed.ncbi.nlm.nih.gov/26953178/
+
 ---
 
 ### Information Sources (Non-Academic)
