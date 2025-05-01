@@ -91,10 +91,6 @@ Scatter plots were made for sepal length vs sepal width and petal length vs peta
 
 There were two ways to plot regression lines to the scatter plots from task 5 using ```seaborn``` or ```numpy```. For the purposes of completing the task initially a regression line was added to the plots from task 5 using the ```np.polyfit``` module from ```numpy.polyfit```.
 
-```ruby
-import numpy as np
-```
-
 Through using numpy, the regression line is manually calculated and added to the plots. This gives the user greater control and customisability of the regression lines.
 ```ruby
 # Scatter plot with regression line for sepal length vs width
@@ -153,7 +149,7 @@ In the code:
 - ```for i, feature in enumerate(['sepal_length', 'sepal_width', 'petal_length', 'petal_width']):``` separates by feature and labels the figure appropriately in ```ax.set_title(titles[i])```,
 - ```sns.boxplot``` states the plot to be conducted,
 - ```x='species'``` the data will be separated by species,
-- ```y=feature``` plotted against the species
+- the ```y=feature``` is plotted against the species
 - ```hue='species'``` the data will be colour coded by species,
 - ```data=df``` is the iris dataset, and
 - ```ax=ax``` refers to the subplot.
