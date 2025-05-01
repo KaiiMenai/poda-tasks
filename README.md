@@ -56,7 +56,7 @@ virginica_stats = df[df['species'] == 'virginica'].describe()
 
 Class distributions were also explored using ```df['species'].value_counts()``` to see if the data was evenly distributed between the three species. 50 samples were seen for each of the species, Setosa, Virginica, and Versicolor.
 
-In order to get a full view of the differences between the species for each of the features a one way ANOVA was run for each of the features using:
+In order to get a full view of the differences between the species for each of the features a one way ANOVA was run for each of the features, separated by species using ```f_oneway```:
 ```ruby
 # Group data by species
 setosa = df[df['species'] == 'setosa']['sepal_length']
@@ -72,49 +72,11 @@ print(f"F-statistic: {anova_results.statistic:.4f}")
 print(f"P-value: {anova_results.pvalue:.4f}")
 ```
 
-Running the ANOVA in addition to the summary statistics would give an oversight as to if there were differences between the species for each of the features.
+Running the ANOVA in addition to the summary statistics gave an oversight as to if there were differences between the species for each of the features.
 
 ### Task 4
 
-Histograms were plotted for each of the features. 
-
-```ruby
-# Set up the figure
-fig, axes = plt.subplots(2, 2, figsize=(12, 10))
-
-# Plot histogram for Sepal Length
-sns.histplot(data=df, x="sepal_length", hue="species", kde=False, ax=axes[0, 0], bins=15)
-axes[0, 0].set_title("Sepal Length Distribution by Species")
-axes[0, 0].set_xlabel("Sepal Length (cm)")
-axes[0, 0].set_ylabel("Frequency")
-axes[0, 0].legend(title="Species", labels=df['species'].unique(), loc='upper right')
-
-# Plot histogram for Sepal Width
-sns.histplot(data=df, x="sepal_width", hue="species", kde=False, ax=axes[0, 1], bins=15)
-axes[0, 1].set_title("Sepal Width Distribution by Species")
-axes[0, 1].set_xlabel("Sepal Width (cm)")
-axes[0, 1].set_ylabel("Frequency")
-axes[0, 1].legend(title="Species", labels=df['species'].unique(), loc='upper right')
-
-# Plot histogram for Petal Length
-sns.histplot(data=df, x="petal_length", hue="species", kde=False, ax=axes[1, 0], bins=15)
-axes[1, 0].set_title("Petal Length Distribution by Species")
-axes[1, 0].set_xlabel("Petal Length (cm)")
-axes[1, 0].set_ylabel("Frequency")
-axes[1, 0].legend(title="Species", labels=df['species'].unique(), loc='upper right')
-
-# Plot histogram for Petal Width
-sns.histplot(data=df, x="petal_width", hue="species", kde=False, ax=axes[1, 1], bins=15)
-axes[1, 1].set_title("Petal Width Distribution by Species")
-axes[1, 1].set_xlabel("Petal Width (cm)")
-axes[1, 1].set_ylabel("Frequency") 
-axes[1, 1].legend(title="Species", labels=df['species'].unique(), loc='upper right')
-
-# Adjust layout for better spacing
-plt.tight_layout()
-plt.show()
-```
-All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
+Histograms were plotted for each of the features. All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
 The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)``` 
 
 - ```sns.histplot``` refers to the plot to be made,
