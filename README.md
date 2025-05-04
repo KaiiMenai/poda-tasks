@@ -49,7 +49,7 @@ Dataset Loaded in.
 150 samples, across 5 variables including 'sepal_length', 'sepal_width', 'petal_length', 'petal_width', and 'species'.
 First and last 5 rows were printed using: ```sliced_df = pd.concat([df.head(5), df.tail(5)])```
 
-### Task 3
+### Task 3: Summarize the Data
 
 Summary statistics for the whole dataset and for each species was done using the ```df.describe()``` function. 
 This was modified for each species so that the species could be separated from one another:
@@ -71,7 +71,7 @@ virginica = df[df['species'] == 'virginica']['sepal_length']
 
 Running the ANOVA in addition to the summary statistics gave an oversight as to if there were differences between the species for each of the features.
 
-### Task 4
+### Task 4: Visualize Features
 
 Histograms were plotted for each of the features. All plots were put into one "figure" to make the data easier to read and compare using ```fig, axes = plt.subplots(2, 2, figsize=(12, 10))```.
 The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="species", kde=False, ax=axes[0, 0], bins=15)```
@@ -82,7 +82,7 @@ The histograms were plotted using ```sns.histplot(data=df, x="feature", hue="spe
 - ```hue="species"``` would colour code the plot points by species, and
 - ```ax=axes[0, 0]``` referred to the subplot.
 
-### Task 5
+### Task 5: Investigate Relationships
 
 Scatter plots were made for sepal length vs sepal width and petal length vs petal width, these were all plotted on one "figure" for ease of observation. This was done using seaborn: ```sns.scatterplot(ax=axes[0], data=df, x='feature1', y='feature2', hue='species', s=100)```
 
@@ -93,7 +93,7 @@ Scatter plots were made for sepal length vs sepal width and petal length vs peta
 - ```y="feature2"``` where ```"feature2"``` was sepal width or petal width, and
 - ```hue="species"``` would colour code the plot points by species.
 
-### Task 6
+### Task 6: Analyze Relationship
 
 There were two ways to plot regression lines to the scatter plots from task 5 using ```seaborn``` or ```numpy```. For the purposes of completing the task initially a regression line was added to the plots from task 5 using the ```np.polyfit``` module from ```numpy.polyfit```.
 
@@ -132,7 +132,7 @@ X_scaled = scaler.fit_transform(X)
 
 The PCA showed that the majority of the variance within the data was due to the petal features (72.8 %) in PC1 (first principal components).
 
-### Task 7
+### Task 7: Analyze Class Distributions
 
 Boxplots were used to see the spread of the data and whether there were outliers. These were done for each of the features and colour coded for the species.
 
@@ -160,7 +160,7 @@ In the code:
 - ```data=df``` is the iris dataset, and
 - ```ax=ax``` refers to the subplot.
 
-### Task 8
+### Task 8: Compute Correlations
 
 ```ruby
 corr_matrix = df.iloc[:, :4].corr() :
@@ -189,7 +189,7 @@ In the plot,
 - cool colours (**blues**) represent **negative** correlations, and
 - warm colours (**reds**) represent **positive** correlations.
 
-### Task 9
+### Task 9: Fit a Simple Linear Regression
 
 The packages used to conduct the Logistic Regression and get R<sup>2</sup> were:
 
@@ -236,7 +236,7 @@ axes[0].text(0.05, 0.95, f'R² = {r2_feature:.2f}', transform=axes[0].transAxes,
 - ```y="feature2"``` where ```"feature2"``` was sepal width or petal width, and
 - ```hue="species"``` would colour code the plot points by species.
 
-### Task 10
+### Task 10: Too Many Features
 
 For the Pairwise plot, the pairplot from the package seaborn was used:
 
