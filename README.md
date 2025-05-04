@@ -12,7 +12,7 @@ author: Kyra Menai Hamilton (PhD)
 
 ## Summary of Content in Jupyter Notebook
 
-### Background
+### What is in this Repository?
 
 The Iris dataset, originally sourced by Anderson (1935), consists of 150 samples of Iris flowers, each with four numeric variables (sepal and petal measurements) and one categorical variable (species). It was first popularised by Fisher (1936) in his application of linear discriminant analysis, a method used to separate classes based on their features.
 
