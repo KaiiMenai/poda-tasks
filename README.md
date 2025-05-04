@@ -337,6 +337,8 @@ Medium (no date) ‘Pairplot visualization’. Available at: https://medium.com/
 
 Medium (no date) ‘Regression model evaluation metrics’. Available at: https://medium.com/%40brandon93.w/regression-model-evaluation-metrics-r-squared-adjusted-r-squared-mse-rmse-and-mae-24dcc0e4cbd3
 
+Medium (2023) 'Scikit-learn, the iris dataset, and machine learning: the journey to a new skill'. *Medium*. Available at: https://3tw.medium.com/scikit-learn-the-iris-dataset-and-machine-learning-the-journey-to-a-new-skill-c8d2f537e087
+
 Mizanur (no date) ‘Cleaning your data: handling missing and duplicate values’. Available at: https://mizanur.io/cleaning-your-data-handling-missing-and-duplicate-values/
 
 Newcastle University (no date) ‘Box and whisker plots’. Available at: https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/data-presentation/box-and-whisker-plots.html
